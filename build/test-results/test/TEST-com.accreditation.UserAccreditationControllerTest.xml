@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.accreditation.UserAccreditationControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-03T14:32:26" hostname="paulo" time="0.18">
+  <properties/>
+  <testcase name="shouldReturnBadRequestWhenReceivedAPayloadThatIsMissingUserId()" classname="com.accreditation.UserAccreditationControllerTest" time="0.163"/>
+  <testcase name="shouldReturnSuccessfulWhenReceivedAValidPayload()" classname="com.accreditation.UserAccreditationControllerTest" time="0.01"/>
+  <testcase name="shouldReturnBadRequestWhenReceivedAPayloadWithInvalidAccreditationType()" classname="com.accreditation.UserAccreditationControllerTest" time="0.005"/>
+  <system-out><![CDATA[2022-05-03 11:32:25.732  INFO 57838 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.accreditation.UserAccreditationControllerTest], using SpringBootContextLoader
+2022-05-03 11:32:25.732  INFO 57838 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.accreditation.UserAccreditationControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-05-03 11:32:25.732  INFO 57838 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.accreditation.UserAccreditationControllerTest]: UserAccreditationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-05-03 11:32:25.739  INFO 57838 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.accreditation.UserAccreditationApplication for test class com.accreditation.UserAccreditationControllerTest
+2022-05-03 11:32:25.740  INFO 57838 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-05-03 11:32:25.741  INFO 57838 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@b5de58f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6587305a, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@abbe000, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3f81621c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5b9499fe, org.springframework.test.context.support.DirtiesContextTestExecutionListener@74d6736, org.springframework.test.context.event.EventPublishingTestExecutionListener@52a33c3f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@668625f5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@19a20bb2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@75babb67, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3eb3232b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@69cd1085, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@60bb7995]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.7)
+
+2022-05-03 11:32:25.758  INFO 57838 --- [    Test worker] c.a.UserAccreditationControllerTest      : Starting UserAccreditationControllerTest using Java 1.8.0_275 on paulo with PID 57838 (started by paulo in /home/paulo/source/personal/user-accreditation)
+2022-05-03 11:32:25.758  INFO 57838 --- [    Test worker] c.a.UserAccreditationControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2022-05-03 11:32:26.080  INFO 57838 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-05-03 11:32:26.080  INFO 57838 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-05-03 11:32:26.081  INFO 57838 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-05-03 11:32:26.087  INFO 57838 --- [    Test worker] c.a.UserAccreditationControllerTest      : Started UserAccreditationControllerTest in 0.345 seconds (JVM running for 2.791)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/accreditation
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"397"]
+             Body = {
+  "payload": {
+    "accreditation_type": "BY_INCOME",
+    "documents": [
+      {
+        "name": "2018.pdf",
+        "mime_type": "application/pdf",
+        "content": "ICAiQC8qIjogWyJzcmMvKiJdCiAgICB9CiAgfQp9Cg=="
+      },
+      {
+        "name": "2019.jpg",
+        "mime_type": "image/jpeg",
+        "content": "91cy1wcm9taXNlICJeMi4wLjUiCiAgICB0b3Bvc29ydCAiXjIuMC4yIgo="
+      }
+    ]
+  }
+}
+
+    Session Attrs = {}
+
+Handler:
+             Type = com.accreditation.controller.UserAccreditationController
+           Method = com.accreditation.controller.UserAccreditationController#saveAccreditation(AccreditationInput)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.bind.MethodArgumentNotValidException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"errors":[{"fieldName":"userId","message":"user_id has to be present"}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/accreditation
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"416"]
+             Body = {
+  "user_id": 1111,
+  "payload": {
+    "accreditation_type": "BY_INCOME",
+    "documents": [
+      {
+        "name": "2018.pdf",
+        "mime_type": "application/pdf",
+        "content": "ICAiQC8qIjogWyJzcmMvKiJdCiAgICB9CiAgfQp9Cg=="
+      },
+      {
+        "name": "2019.jpg",
+        "mime_type": "image/jpeg",
+        "content": "91cy1wcm9taXNlICJeMi4wLjUiCiAgICB0b3Bvc29ydCAiXjIuMC4yIgo="
+      }
+    ]
+  }
+}
+
+    Session Attrs = {}
+
+Handler:
+             Type = com.accreditation.controller.UserAccreditationController
+           Method = com.accreditation.controller.UserAccreditationController#saveAccreditation(AccreditationInput)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"success":true,"accredited":false}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /user/accreditation
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"414"]
+             Body = {
+  "user_id": 1111,
+  "payload": {
+    "accreditation_type": "BY_TEST",
+    "documents": [
+      {
+        "name": "2018.pdf",
+        "mime_type": "application/pdf",
+        "content": "ICAiQC8qIjogWyJzcmMvKiJdCiAgICB9CiAgfQp9Cg=="
+      },
+      {
+        "name": "2019.jpg",
+        "mime_type": "image/jpeg",
+        "content": "91cy1wcm9taXNlICJeMi4wLjUiCiAgICB0b3Bvc29ydCAiXjIuMC4yIgo="
+      }
+    ]
+  }
+}
+
+    Session Attrs = {}
+
+Handler:
+             Type = com.accreditation.controller.UserAccreditationController
+           Method = com.accreditation.controller.UserAccreditationController#saveAccreditation(AccreditationInput)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.http.converter.HttpMessageNotReadableException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"errors":[{"fieldName":"accreditation_type","message":"value should be equal to BY_INCOME"}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
