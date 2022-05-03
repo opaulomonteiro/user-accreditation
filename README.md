@@ -1,6 +1,6 @@
 # Getting Started
 
-This is an application is used for user accreditation. 
+This application is used for user accreditation. 
 
 # Stack : 
 
